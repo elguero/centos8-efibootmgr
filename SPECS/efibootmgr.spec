@@ -11,7 +11,7 @@ BuildRequires: git, popt-devel
 BuildRequires: efivar-libs >= %{efivar_version}
 BuildRequires: efivar-devel >= %{efivar_version}
 # EFI/UEFI don't exist on PPC
-ExclusiveArch: %{ix86} x86_64 aarch64 arm
+ExclusiveArch: %{ix86} x86_64 aarch64 %{arm}
 
 # for RHEL / Fedora when efibootmgr was part of the elilo package
 Conflicts: elilo <= 3.6-6
@@ -58,6 +58,9 @@ rm -rf %{buildroot}
 %doc README
     
 %changelog
+* Mon May 20 2019 Pablo Greco <pgreco@centosproject.org> - 16-1
+- Allow building in armhfp
+
 * Mon Apr 09 2018 Peter Jones <pjones@redhat.com> - 16-1
 - efibootmgr 16
 - better coverity and clang-analyzer support
