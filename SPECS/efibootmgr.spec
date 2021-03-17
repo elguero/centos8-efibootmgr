@@ -19,6 +19,8 @@ Obsoletes: elilo <= 3.6-6
 
 Source0: https://github.com/rhinstaller/%{name}/releases/download/%{name}-%{version}/%{name}-%{version}.tar.bz2
 
+Patch0: 0001-Fix-the-compiler-errors-about-signedness-differing.patch
+
 %global efidir %(eval echo $(grep ^ID= /etc/os-release | sed -e 's/^ID=//' -e 's/rhel/redhat/'))
 
 %description
